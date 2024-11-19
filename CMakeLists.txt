@@ -18,4 +18,10 @@ add_executable(BlueSensor
 pico_enable_stdio_usb(BlueSensor 1)
 pico_enable_stdio_uart(BlueSensor 0)
 pico_add_extra_outputs(BlueSensor)
-target_link_libraries(BlueSensor pico_stdlib)
+target_link_libraries(BlueSensor
+	pico_stdlib
+	pico_cyw43_arch_none
+	pico_btstack_ble
+	pico_btstack_classic
+	pico_btstack_cyw43
+	)
