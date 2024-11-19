@@ -5,6 +5,7 @@ project(BlueSensor C CXX ASM)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
+set(DPICO pico_w)
 
 pico_sdk_init()
 
@@ -14,7 +15,7 @@ add_executable(BlueSensor
 	BlueSensor.S
 	)
 
-pico_enable_stdio_uart(BlueSensor 1)
-pico_enable_stdio_usb(BlueSensor 0)
+pico_enable_stdio_usb(BlueSensor 1)
+pico_enable_stdio_uart(BlueSensor 0)
 pico_add_extra_outputs(BlueSensor)
 target_link_libraries(BlueSensor pico_stdlib)
